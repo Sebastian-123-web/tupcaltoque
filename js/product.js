@@ -9,4 +9,5 @@ $('#agregarp').click(function(){
   $.post('php/addproduct.php',{cpu , ram , disk , monitor , image , category , price}, function(response){
     alert(response);
   });
+  document.getElementById('formAdd').reset();
 });
