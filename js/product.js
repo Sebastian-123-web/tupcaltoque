@@ -11,10 +11,10 @@ $('#agregarp').click(function(){
   var category = document.getElementById('category').value;
   var price = document.getElementById('price').value;
   $.post('php/addproduct.php',{cpu , ram , disk , monitor , image , category , price}, function(response){
+    mostrarProductosAdmin();
     alert(response);
   });
   document.getElementById('formAdd').reset();
-  mostrarProductosAdmin();
 });
 
 function mostrarProductosAdmin(){
@@ -47,6 +47,7 @@ function mostrarProductosAdmin(){
 }
 
 function eliminarProducto(id){
-  $.post('php/eliminarProducto.php',{ id });
-  mostrarProductosAdmin();
+  $.post('php/eliminarProducto.php',{ id },function(){
+    mostrarProductosAdmin();
+  });
 }
