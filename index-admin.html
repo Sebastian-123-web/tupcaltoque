@@ -12,29 +12,52 @@
       </div>
     </nav>
     <div class="container mt-5">
-      <div class="col-lg-5">
-        <div class="card">
-          <div class="card-header">
-            Agregar Producto
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card" style="font-size: 13px;">
+            <div class="card-header">
+              Agregar Producto
+            </div>
+            <div class="card-body">
+              <form id="formAdd">
+                <input type="text" class="form-control" id="cpu" placeholder="Procesador"><br>
+                <input type="number" class="form-control" id="ram" placeholder="Memoria RAM"><br>
+                <input type="number" class="form-control" id="disk" placeholder="Disco Duro"><br>
+                <input type="text" class="form-control" id="monitor" placeholder="Monitor"><br>
+                <input type="file" class="mb-3" id="image">
+                <br><select name="categoria" class="form-control" id="category">
+                          <option selected value="G">Gamer</option>
+                          <option value="N">Normal</option>
+                </select>
+                <input type="number" class="form-control mt-3" id="price" placeholder="Precio"><br>
+                <button type="button" class="form-control btn-info" id="agregarp">Agregar</button>
+              </form>
+            </div>
           </div>
-          <div class="card-body">
-            <form id="formAdd">
-              <input type="text" class="form-control" id="cpu" placeholder="Procesador"><br>
-              <input type="number" class="form-control" id="ram" placeholder="Memoria RAM"><br>
-              <input type="number" class="form-control" id="disk" placeholder="Disco Duro"><br>
-              <input type="text" class="form-control" id="monitor" placeholder="Monitor"><br>
-              <input type="file" class="mb-3" id="image">
-              <br><select name="categoria" class="form-control" id="category">
-                        <option selected value="G">Gamer</option>
-                        <option value="N">Normal</option>
-              </select>
-              <input type="number" class="form-control mt-3" id="price" placeholder="Precio"><br>
-              <button type="button" class="form-control btn-info" id="agregarp">Agregar</button>
-            </form>
-          </div>
+        </div>
+        <div class="col-lg-8">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Procesador</th>
+                <th>RAM</th>
+                <th>Disco</th>
+                <th>Monitor</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="body" style="font-size: 14px;">
+
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+    <script src="https://kit.fontawesome.com/e20f78cd09.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="js/product.js"></script>
   </body>
