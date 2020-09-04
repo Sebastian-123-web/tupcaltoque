@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,7 +24,7 @@ input.src{
 	border-radius: 25px;
 	color:#444;
 	border:3px solid #a50559;
-	background: #fff url("search-icon.png")
+	background: #fff;
 		no-repeat 9px center;
 		width: 70px;
 		transition: all .5s;
@@ -49,11 +49,11 @@ width: 180px;
 .retroceder{
 
 	color: #FF0000;
-	
+
 	font-size: 100px;
 	margin-left:200px;
 	margin-top: 10px;
-	
+
 	font-color: #F26FED;
 	color: #F49FF1;
 

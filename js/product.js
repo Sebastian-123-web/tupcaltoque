@@ -12,7 +12,6 @@ $('#agregarp').click(function(){
   var price = document.getElementById('price').value;
   $.post('php/addproduct.php',{cpu , ram , disk , monitor , image , category , price}, function(response){
     mostrarProductosAdmin();
-    alert(response);
   });
   document.getElementById('formAdd').reset();
 });
