@@ -2,7 +2,8 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Administrador Productos</title>
+    <link rel="shortcut icon" href="img/alexcgdesign.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   </head>
   <body>
@@ -20,6 +21,7 @@
             </div>
             <div class="card-body">
               <form id="formAdd">
+                <input type="hidden" id="id-producto">
                 <input type="text" class="form-control" id="cpu" placeholder="Procesador"><br>
                 <input type="number" class="form-control" id="ram" placeholder="Memoria RAM"><br>
                 <input type="number" class="form-control" id="disk" placeholder="Disco Duro"><br>
@@ -31,6 +33,7 @@
                 </select>
                 <input type="number" class="form-control mt-3" id="price" placeholder="Precio"><br>
                 <button type="button" class="form-control btn-info" id="agregarp">Agregar</button>
+                <button type="button" class="form-control btn-success" id="editarp" style="display: none;">Editar</button>
               </form>
             </div>
           </div>
