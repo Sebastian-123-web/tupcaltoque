@@ -20,18 +20,18 @@
               Agregar Producto
             </div>
             <div class="card-body">
-              <form id="formAdd">
-                <input type="hidden" id="id-producto">
-                <input type="text" class="form-control" id="cpu" placeholder="Procesador"><br>
-                <input type="number" class="form-control" id="ram" placeholder="Memoria RAM"><br>
-                <input type="number" class="form-control" id="disk" placeholder="Disco Duro"><br>
-                <input type="text" class="form-control" id="monitor" placeholder="Monitor"><br>
-                <input type="file" class="mb-3" id="image">
-                <br><select name="categoria" class="form-control" id="category">
+              <form id="formAdd" name="formAdd" method="POST" enctype="multipart/form-data">
+                <input type="hidden" id="id-producto" name="id-producto">
+                <input type="text" class="form-control" name="cpu" placeholder="Procesador"><br>
+                <input type="number" class="form-control" name="ram" placeholder="Memoria RAM"><br>
+                <input type="number" class="form-control" name="disk" placeholder="Disco Duro"><br>
+                <input type="text" class="form-control" name="monitor" placeholder="Monitor"><br>
+                <input type="file" class="mb-3" name="image">
+                <br><select class="form-control" name="category" id="category">
                           <option selected value="G">Gamer</option>
                           <option value="N">Normal</option>
                 </select>
-                <input type="number" class="form-control mt-3" id="price" placeholder="Precio"><br>
+                <input type="number" class="form-control mt-3" name="price" placeholder="Precio"><br>
                 <button type="button" class="form-control btn-info" id="agregarp">Agregar</button>
                 <button type="button" class="form-control btn-success" id="editarp" style="display: none;">Editar</button>
               </form>
