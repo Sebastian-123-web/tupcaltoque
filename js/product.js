@@ -3,22 +3,23 @@ $(document).ready(function(){
 })
 var editar = false;
 $('#agregarp').click(function(){
-  var cpu = document.getElementById('cpu').value;
-  var ram = document.getElementById('ram').value;
-  var disk = document.getElementById('disk').value;
-  var monitor = document.getElementById('monitor').value;
-  var image = document.getElementById('image').value;
-  var category = document.getElementById('category').value;
-  var price = document.getElementById('price').value;
-  var id = document.getElementById('id-producto').value;
+  var formdata = new FormData(document.getElementById('formAdd'));
   var url = '';
   if(editar == false){
     url = 'php/addproduct.php';
   }else {
     url = 'php/editarProductoPost2.php';
   }
-  $.post(url, {cpu , ram , disk , monitor , image , category , price, id}, function(response){
-    mostrarProductosAdmin();
+  $.ajax({
+    url: url,
+    type : 'POST',
+    data : formdata,
+    processData : false,
+    contentType : false,
+    success : function(data){
+      alert(data);
+      mostrarProductosAdmin();
+    }
   });
   document.getElementById('formAdd').reset();
 });
