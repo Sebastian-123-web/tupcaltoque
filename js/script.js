@@ -1,5 +1,6 @@
 $(document).ready(function(){
   mostrarProductosIndex();
+  mostrarProductosIndexN();
 });
 
 function mostrarProductosIndex(){
@@ -11,7 +12,6 @@ function mostrarProductosIndex(){
       console.log(data);
       var insetar = '';
       data.forEach( datos => {
-        var categoria = '';
         if (datos.categoria == 'G') {
           if(datos.disco_duro==1){var disk = datos.disco_duro + "T";}else {var disk = datos.disco_duro + "GB";}
           insetar += `
