@@ -477,9 +477,3 @@ footer{
 .portafolio2{
     background: #f2f2f2;
 }
-
-@media screen and (max-width:900px){
-  .madia1200{
-    display: none;
-  }
-}
