@@ -42,6 +42,7 @@ function mostrarProductosAdmin(){
           <th class="font-weight-normal">${datos.disco_duro}</th>
           <th class="font-weight-normal">${datos.monitor}</th>
           <th class="font-weight-normal">${categoria}</th>
+          <th class="font-weight-normal">${datos.oferta}</th>
           <th class="font-weight-normal">${datos.precio}</th>
           <th><p class="text-success" onclick="editarProducto(${datos.id_producto});" style="font-size: 20px;"><i class="fas fa-pen-square"></i></p></th>
           <th><p class="text-danger" onclick="eliminarProducto(${datos.id_producto});" style="font-size: 20px; cursor: pointer;"><i class="fas fa-trash-alt"></i></p></th>

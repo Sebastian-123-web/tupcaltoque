@@ -5,6 +5,7 @@
   $monitor = $_POST['monitor'];
   $category = $_POST['category'];
   $price = $_POST['price'];
+  $oferta = $_POST['oferta'];
 
   $tipo_img=$_FILES['image']['type']; //devuelve el tipo de archivo imagen/jpeg
   $tmp_nombre = $_FILES['image']['tmp_name']; //devuelve la direccion donde se encuentra temporalmente la imagen
@@ -15,7 +16,7 @@
 
   if(!empty($cpu) && !empty($ram) && !empty($disk) && !empty($monitor) && !empty($category) && !empty($price) && !empty($inombre)){
     include 'conexion.php';
-    $sql = "INSERT INTO `producto` (`id_producto`, `categoria`, `cpu`, `ram`, `disco_duro`, `monitor`, `img`, `precio`) VALUES (NULL, '$category', '$cpu', '$ram', '$disk', '$monitor', '$inombre', '$price')";
+    $sql = "INSERT INTO `producto` (`id_producto`, `categoria`, `cpu`, `ram`, `disco_duro`, `monitor`, `img`, `oferta`, `precio`) VALUES (NULL, '$category', '$cpu', '$ram', '$disk', '$monitor', '$inombre', '$oferta', '$price')";
     $query = mysqli_query($link, $sql);
     echo 'Se agrego satisfactoriamente';
   }else{

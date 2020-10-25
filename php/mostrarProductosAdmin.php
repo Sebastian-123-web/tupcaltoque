@@ -12,6 +12,7 @@
       'disco_duro' => $row['disco_duro'],
       'monitor' => $row['monitor'],
       'img' => $row['img'],
+      'oferta' => $row['oferta'],
       'precio' => $row['precio']
     );
   }

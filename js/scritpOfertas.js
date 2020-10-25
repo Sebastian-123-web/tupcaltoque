@@ -10,7 +10,7 @@ function mostrarProductosIndex(){
       var data = JSON.parse(response);
       var insetar = '';
       data.forEach( datos => {
-        if (datos.categoria == 'G') {
+        if (datos.oferta == 'si') {
           if(datos.disco_duro==1){var disk = datos.disco_duro + "T";}else {var disk = datos.disco_duro + "GB";}
           insetar += `
             <div class="imagen-port">
@@ -23,7 +23,7 @@ function mostrarProductosIndex(){
           `
         }
       });
-      $('#galeriaproductos').html(insetar);
+      $('#galeriaproductosofertas').html(insetar);
     }
   });
 }
