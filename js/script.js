@@ -21,7 +21,7 @@ function mostrarProductosIndex(){
                   <img src="img/icono1.png" alt="">
                   <p>-${datos.cpu}<br>-${datos.ram}GB RAM<br>-${disk}<br>-${datos.monitor}<br><br><br>
                     <div class="d-flex justify-content-between" style="width: 130px;">
-                      <div onclick="agregarCarrito(${datos.id_producto})"><i class="fas fa-shopping-cart text-light" style="font-size: 20px;"></i></div>
+                      <div onclick="agregarCarrito(${datos.id_producto})" type="button" data-toggle="modal" data-target="#exampleModalCentered"><i class="fas fa-shopping-cart text-light" style="font-size: 20px;"></i></div>
                       <p>S/. ${datos.precio}</p>
                     </div>
                   </p>

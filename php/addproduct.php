@@ -16,11 +16,8 @@
 
   if(!empty($cpu) && !empty($ram) && !empty($disk) && !empty($monitor) && !empty($category) && !empty($price) && !empty($inombre)){
     include 'conexion.php';
-<<<<<<< HEAD
     $sql = "INSERT INTO `producto` (`id_producto`, `categoria`, `cpu`, `ram`, `disco_duro`, `monitor`, `img`, `precio`) VALUES (NULL, '$category', '$cpu', '$ram', '$disk', '$monitor', '$inombre', '$price')";
-=======
     $sql = "INSERT INTO `producto` (`id_producto`, `categoria`, `cpu`, `ram`, `disco_duro`, `monitor`, `img`, `oferta`, `precio`) VALUES (NULL, '$category', '$cpu', '$ram', '$disk', '$monitor', '$inombre', '$oferta', '$price')";
->>>>>>> cc0ab99283e920d8bf1795d60e3cc4c6e7203f35
     $query = mysqli_query($link, $sql);
     echo 'Se agrego satisfactoriamente';
   }else{

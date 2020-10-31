@@ -1,4 +1,4 @@
 <?php
-  include 'script-general.php';
+  include 'carrito.php';
   
 ?>
