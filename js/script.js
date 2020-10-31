@@ -1,5 +1,6 @@
 $(document).ready(function(){
   mostrarProductosIndex();
+  mostrarProductosIndexN();
 });
 
 function mostrarProductosIndex(){
@@ -8,6 +9,7 @@ function mostrarProductosIndex(){
     type : 'GET',
     success : function(response){
       var data = JSON.parse(response);
+      console.log(data);
       var insetar = '';
       data.forEach( datos => {
         if (datos.categoria == 'G') {
