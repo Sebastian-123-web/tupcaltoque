@@ -1,13 +1,10 @@
-function carrito(id_producto){
+function agregarCarrito(id_producto){
   $.ajax({
-    url : "php/carrito.php",
-    type : "POST",
-    data : {id_producto},
-    success : function(response){
-      console.log(response);
-      var car = document.getElementById('can_carrito');
-      console.log(car);
-      car.innerHTML = response;
+    url : 'php/script-general.php',
+    type : 'POST',
+    data : { id_producto },
+    success : function(responce){
+      alert(responce);
     }
-  })
+  });
 }
