@@ -26,7 +26,7 @@
       }
     }
     function sesionEstado(){
-      echo session_status();
+      return session_status();
     }
     function sesionCerrada(){
       session_start();
