@@ -36,6 +36,9 @@
     }
   }
 
-  // $car = new CarritodeCompra(0,0,'rbanagasta');
-  // $car->cantidadCarrito();
+  //$car = new CarritodeCompra(0,0,'rbanagasta');
+  //$car->agregarCarrito();
+  //$car->eliminarCarrito();
+  //$car->mostrarCarrito();
+  //$car->cantidadCarrito();
 ?>
