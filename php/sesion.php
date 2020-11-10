@@ -38,7 +38,7 @@
     }
   }
 
-  $sesion = new SesionUsuario('rbanagasta', 'RB2020');
+  //$sesion = new SesionUsuario('rbanagasta', 'RB2020');
   //$sesion->sesionAutentificacion();
   //$sesion->sesionEstado();
   //$sesion->sesionCerrada();
