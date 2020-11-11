@@ -43,7 +43,6 @@
   //$sesion->sesionAutentificacion('rbanagasta', 'RB2020');
   //$sesion->sesionEstado();
   //$sesion->sesionCerrada();
-  //sesion->sesionInvitado();
 
   //var_dump($row);
   //var_dump($query);exit;
