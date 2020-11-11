@@ -19,8 +19,8 @@
         $_SESSION["usuario"]["apellido"] = $row["apellido"];
         $_SESSION["usuario"]["correo"] = $row["correo"];
         $_SESSION["usuario"]["tipo_user"] = $row["tipo_user"];
-        //return $_SESSION["usuario"];
-        echo 'sesion iniciada '.$_SESSION["usuario"]["id_user"];
+        return $_SESSION["usuario"];
+        //echo 'sesion iniciada '.$_SESSION["usuario"]["id_user"];
       }
     }
     function sesionEstado(){
