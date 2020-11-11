@@ -15,7 +15,7 @@
       $query = mysqli_query($link, $sql);
       $row = mysqli_fetch_array($query);
       if(!isset($row[0])){
-        return 'Error al iniciar sesion';
+        echo 'Error al iniciar sesion';
       }else{
         session_start();
         $_SESSION["usuario"]["id_user"] = $row["id_user"];
@@ -28,13 +28,23 @@
       }
     }
     function sesionEstado(){
-      return session_status();
+      session_start();
+      if(!isset($_SESSION["usuario"]["id_user"])){
+        echo 1;
+      }else{
+        echo 2;
+      }
     }
     function sesionCerrada(){
       session_start();
       session_unset();
       session_destroy();
-      return "Sesion Cerrada";
+      echo "Sesion Cerrada";
+    }
+    function sesionInvitado(){
+      session_start();
+      $_SESSION["usuario"]["id_user"] = 'Invitado';
+      return $_SESSION["usuario"];
     }
   }
 
@@ -42,6 +52,7 @@
   //$sesion->sesionAutentificacion();
   //$sesion->sesionEstado();
   //$sesion->sesionCerrada();
+  //sesion->sesionInvitado();
 
   //var_dump($row);
   //var_dump($query);exit;
