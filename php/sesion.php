@@ -1,17 +1,12 @@
 <?php
   class SesionUsuario{
 
-    var $usuario;
-    var $contraseña;
-
-    function __construct($usuario, $contraseña){
-      $this->usuario = $usuario;
-      $this->contraseña = $contraseña;
+    function __construct(){
     }
 
-    function sesionAutentificacion(){
+    public function sesionAutentificacion($usuario,$contraseña){
       include 'conexion.php';
-      $sql = 'SELECT * FROM `usuario` WHERE `id_user`="'.$this->usuario.'" AND `contraseña`="'.$this->contraseña.'"';
+      $sql = 'SELECT * FROM `usuario` WHERE `id_user`="'.$usuario.'" AND `contraseña`="'.$contraseña.'"';
       $query = mysqli_query($link, $sql);
       $row = mysqli_fetch_array($query);
       if(!isset($row[0])){
@@ -24,7 +19,8 @@
         $_SESSION["usuario"]["apellido"] = $row["apellido"];
         $_SESSION["usuario"]["correo"] = $row["correo"];
         $_SESSION["usuario"]["tipo_user"] = $row["tipo_user"];
-        return $_SESSION["usuario"];
+        //return $_SESSION["usuario"];
+        echo 'sesion iniciada '.$_SESSION["usuario"]["id_user"];
       }
     }
     function sesionEstado(){
@@ -41,15 +37,10 @@
       session_destroy();
       echo "Sesion Cerrada";
     }
-    function sesionInvitado(){
-      session_start();
-      $_SESSION["usuario"]["id_user"] = 'Invitado';
-      return $_SESSION["usuario"];
-    }
   }
 
-  //$sesion = new SesionUsuario('rbanagasta', 'RB2020');
-  //$sesion->sesionAutentificacion();
+  //$sesion = new SesionUsuario();
+  //$sesion->sesionAutentificacion('rbanagasta', 'RB2020');
   //$sesion->sesionEstado();
   //$sesion->sesionCerrada();
   //sesion->sesionInvitado();

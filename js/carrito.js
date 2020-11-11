@@ -5,14 +5,9 @@ function sesionIniciada(){
     data: { num : 1 },
     success: function(response){
       if(response==1){
-        $.ajax({
-          url: ,
-          type: 'POST',
-          data: { num : 4 },
-          success: function(res){
-            
-          }
-        });
+        window.location.href = "iniciarsesion.html";
+      }else{
+        console.log('hola men');
       }
     }
   })
