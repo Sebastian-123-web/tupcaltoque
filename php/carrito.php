@@ -1,10 +1,6 @@
 <?php
   class CarritodeCompra{
 
-    var $id_carrito;
-    var $id_producto;
-    var $id_user;
-
     function __construct(){
     }
 

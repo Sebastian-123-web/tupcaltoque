@@ -19,6 +19,11 @@
       session_start();
       $carrito->cantidadCarrito($_SESSION["usuario"]["id_user"]);
     break;
+    case 4:
+      $usuario = $_POST['user'];
+      $contraseña = $_POST['password'];
+      $sesion->sesionAutentificacion($usuario, $contraseña);
+    break;
 
     default:
       // code...
