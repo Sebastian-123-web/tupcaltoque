@@ -17,10 +17,11 @@
     }
     function mostrarCarrito($id_user){
       include 'conexion.php';
-      $sql = "SELECT * FROM `carrito` WHERE `id_user`='$id_user'";
+      $sql = "SELECT `producto`.`img`,`producto`.`cpu`,`producto`.`precio` FROM `carrito`,`producto` WHERE `id_user`='$id_user'";
       $array = mysqli_fetch_array(mysqli_query($link, $sql));
-      $send = json_encode($array);
-      return $send;
+      //$send = json_encode($array);
+      //return $send;
+      var_dump($array);
     }
     function cantidadCarrito($id_user){
       include 'conexion.php';
@@ -30,9 +31,9 @@
     }
   }
 
-  //$car = new CarritodeCompra();
+  $car = new CarritodeCompra();
   //$car->agregarCarrito();
   //$car->eliminarCarrito();
-  //$car->mostrarCarrito();
+  $car->mostrarCarrito('rbanagasta');
   //$car->cantidadCarrito();
 ?>

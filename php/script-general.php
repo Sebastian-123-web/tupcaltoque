@@ -24,6 +24,11 @@
       $contraseña = $_POST['password'];
       $sesion->sesionAutentificacion($usuario, $contraseña);
     break;
+    case 5:
+      if(isset($_SESSION["usuario"]["id_user"])){
+        $carrito->mostrarCarrito($id_user);
+      }
+    break;
 
     default:
       // code...

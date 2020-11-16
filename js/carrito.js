@@ -49,6 +49,16 @@ function actualizariconoCarrito(){
           }
         })
       }
+    }
+  })
+}
+
+function desplegarcarrito(){
+  $.ajax({
+    url: 'php/script-general.php',
+    type: 'POST',
+    data: { num : 5 },
+    success: function(response){
 
     }
   })
