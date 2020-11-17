@@ -18,10 +18,19 @@
     function mostrarCarrito($id_user){
       include 'conexion.php';
       $sql = "SELECT `carrito`.`id_carrito`,`producto`.`img`,`producto`.`cpu`,`producto`.`precio` FROM `carrito` INNER JOIN `producto` ON `carrito`.`id_producto`=`producto`.`id_producto` WHERE `id_user`='$id_user'";
-      $array = mysqli_fetch_array(mysqli_query($link, $sql));
-      //$send = json_encode($array);
-      //return $send;
-      var_dump($array);
+      $array = mysqli_query($link, $sql);
+      $result = array();
+      while ($row = mysqli_fetch_array($array)){
+        $result[] = array(
+          'id_carrito' => $row['id_carrito'],
+          'img' => $row['img'],
+          'cpu' => $row['cpu'],
+          'precio' => $row['precio']
+        );
+      }
+      $send = json_encode($result);
+      echo $send;
+      //var_dump($result);
     }
     function cantidadCarrito($id_user){
       include 'conexion.php';
@@ -31,9 +40,9 @@
     }
   }
 
-  $car = new CarritodeCompra();
+  //$car = new CarritodeCompra();
   //$car->agregarCarrito();
   //$car->eliminarCarrito();
-  $car->mostrarCarrito('rbanagasta');
+  //$car->mostrarCarrito('rbanagasta');
   //$car->cantidadCarrito();
 ?>

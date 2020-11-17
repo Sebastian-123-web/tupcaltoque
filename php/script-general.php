@@ -25,8 +25,9 @@
       $sesion->sesionAutentificacion($usuario, $contraseña);
     break;
     case 5:
+      session_start();
       if(isset($_SESSION["usuario"]["id_user"])){
-        $carrito->mostrarCarrito($id_user);
+        $carrito->mostrarCarrito($_SESSION["usuario"]["id_user"]);
       }
     break;
 

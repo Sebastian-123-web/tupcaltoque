@@ -6,6 +6,7 @@ $("#sesion").on("click", function(){
     type: 'POST',
     data: { num : 4 , user : usuario , password : contraseña },
     success: function(response){
+      console.log('hola');
       history.back(1);
     }
   })
