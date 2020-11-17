@@ -17,7 +17,7 @@
     }
     function mostrarCarrito($id_user){
       include 'conexion.php';
-      $sql = "SELECT `producto`.`img`,`producto`.`cpu`,`producto`.`precio` FROM `carrito`,`producto` WHERE `id_user`='$id_user'";
+      $sql = "SELECT `carrito`.`id_carrito`,`producto`.`img`,`producto`.`cpu`,`producto`.`precio` FROM `carrito` INNER JOIN `producto` ON `carrito`.`id_producto`=`producto`.`id_producto` WHERE `id_user`='$id_user'";
       $array = mysqli_fetch_array(mysqli_query($link, $sql));
       //$send = json_encode($array);
       //return $send;

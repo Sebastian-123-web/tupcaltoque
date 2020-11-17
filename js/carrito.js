@@ -59,7 +59,7 @@ function desplegarcarrito(){
     type: 'POST',
     data: { num : 5 },
     success: function(response){
-
+      
     }
   })
 }
