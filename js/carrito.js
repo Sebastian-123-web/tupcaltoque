@@ -104,7 +104,7 @@ function mostrarTodoCarrito(){
       var total = 0;
       data.forEach(datos => {
         insertar += `
-          <tr>
+          <tr idcarrito="${datos.id_carrito}">
             <td><img src="img/computadoras/${datos.img}" alt="" style="width: 40px; height: 40px;"></td>
             <td>${datos.cpu}</td>
             <td>${datos.ram}</td>
@@ -123,3 +123,19 @@ function mostrarTodoCarrito(){
     }
   });
 }
+
+$(document).on("click", "button" ,function(){
+  var elemento = $(this)[0].parentElement.parentElement;
+  var id_carrito = $(elemento).attr('idcarrito');
+  console.log(id_carrito);
+  $.ajax({
+    url: 'php/script-general.php',
+    type: 'POST',
+    data: { num : 6 , idcarrito : id_carrito },
+    success: function(response){
+      console.log('eliminado');
+      mostrarTodoCarrito();
+      actualizariconoCarrito();
+    }
+  })
+});

@@ -30,6 +30,10 @@
         $carrito->mostrarCarrito($_SESSION["usuario"]["id_user"]);
       }
     break;
+    case 6:
+      $id_carrito = $_POST['idcarrito'];
+      $carrito->eliminarCarrito($id_carrito);
+    break;
 
     default:
       // code...
