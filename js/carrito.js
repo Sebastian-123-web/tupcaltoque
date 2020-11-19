@@ -66,6 +66,7 @@ function desplegarcarrito(){
         tabla.style.display = 'none';
       }else{
         insertarDespliegeCarrito();
+        mostrarTodoCarrito();
       }
     }
   })
@@ -88,6 +89,37 @@ function insertarDespliegeCarrito(){
         `
       });
       $('#tbody').html(insertar);
+    }
+  });
+}
+
+function mostrarTodoCarrito(){
+  $.ajax({
+    url: 'php/script-general.php',
+    type: 'POST',
+    data: { num : 5 },
+    success: function(response){
+      var data = JSON.parse(response);
+      var insertar = '';
+      var total = 0;
+      data.forEach(datos => {
+        insertar += `
+          <tr>
+            <td><img src="img/computadoras/${datos.img}" alt="" style="width: 40px; height: 40px;"></td>
+            <td>${datos.cpu}</td>
+            <td>${datos.ram}</td>
+            <td>${datos.disco_duro}</td>
+            <td>${datos.monitor}</td>
+            <td>S/.${datos.precio}</td>
+            <td><button type="button" name="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+          </tr>
+        `
+        var precio = parseInt(datos.precio, 10);
+        total = total+precio;
+      });
+      console.log(total);
+      $('#tbodyCarrito').html(insertar);
+      $('#precio').html("S/."+total);
     }
   });
 }

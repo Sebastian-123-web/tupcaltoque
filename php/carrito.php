@@ -17,14 +17,20 @@
     }
     function mostrarCarrito($id_user){
       include 'conexion.php';
-      $sql = "SELECT `carrito`.`id_carrito`,`producto`.`img`,`producto`.`cpu`,`producto`.`precio` FROM `carrito` INNER JOIN `producto` ON `carrito`.`id_producto`=`producto`.`id_producto` WHERE `id_user`='$id_user'";
+      $sql = "SELECT `carrito`.`id_carrito`,`producto`.`id_producto`,`carrito`.`id_user`,`producto`.`categoria`,`producto`.`cpu`,`producto`.`ram`,`producto`.`disco_duro`,`producto`.`monitor`,`producto`.`img`,`producto`.`precio` FROM `carrito` INNER JOIN `producto` ON `carrito`.`id_producto`=`producto`.`id_producto` WHERE `id_user`='$id_user'";
       $array = mysqli_query($link, $sql);
       $result = array();
       while ($row = mysqli_fetch_array($array)){
         $result[] = array(
           'id_carrito' => $row['id_carrito'],
-          'img' => $row['img'],
+          'id_producto' => $row['id_producto'],
+          'id_user' => $row['id_user'],
+          'categoria' => $row['categoria'],
           'cpu' => $row['cpu'],
+          'ram' => $row['ram'],
+          'disco_duro' => $row['disco_duro'],
+          'monitor' => $row['monitor'],
+          'img' => $row['img'],
           'precio' => $row['precio']
         );
       }
