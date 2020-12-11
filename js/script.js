@@ -1,6 +1,29 @@
 $(document).ready(function(){
   mostrarProductosIndex();
-  mostrarProductosIndexN();
+
+  $('#search').keyup(function(){
+    if($('#search').val()){
+      var search = $('#search').val();
+      $.ajax({
+        url: 'php/buscador.php',
+        type: 'POST',
+        data: { search },
+        success: function(response){
+          var data = JSON.parse(response);
+          var plantilla = '';
+          data.forEach(data => {
+            plantilla += `
+              <li><a href="#">${data.cpu}</a></li>
+              `
+          });
+          $('#filtro').html(plantilla);
+        }
+      })
+    }else{
+      $('#filtro').html(' ');
+    }
+  });
+
 });
 
 function mostrarProductosIndex(){
