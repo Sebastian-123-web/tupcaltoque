@@ -13,7 +13,7 @@ $(document).ready(function(){
           var plantilla = '';
           data.forEach(data => {
             plantilla += `
-              <li><a href="#">${data.cpu}</a></li>
+              <li><a href="#" idfiltro="${data.id_producto}" class="filtrodeproducto"><i class="fas fa-search"></i> ${data.cpu}</a></li>
               `
           });
           $('#filtro').html(plantilla);
@@ -57,3 +57,17 @@ function mostrarProductosIndex(){
     }
   });
 }
+
+
+$(document).on('click', '.filtrodeproducto', function(){
+  var elemento = $(this)[0];
+  var id = $(elemento).attr('idfiltro');
+  $.ajax({
+    url: 'buscador-productos.php',
+    type: 'POST',
+    data: { id },
+    success: function(){
+      location.href ="buscador-productos.php";
+    }
+  })
+});

@@ -56,13 +56,33 @@
   visibility: visible;
   opacity: 1;
 }
+
+
+/* FILTRO */
+.sub_filtro{
+  width: 200px;
+  background-color: #c7c7c7;
+  position: absolute;
+  top: 110px;
+  list-style: none;
+}
+.sub_filtro>li{
+  padding: 10px 15px;
+}
+.sub_filtro>li:hover{
+  background: #8c8c8c;
+}
+.sub_filtro>li>a{
+  text-decoration: none;
+  color: #00000069;
+}
 </style>
 <body>
 <div class="container my-4 d-flex justify-content-between">
   <a href="index.html" class="h1">TUPCALTOQUE</a>
   <div class="" style="display: flex;">
-    <input type="text" name="Search" id="search" placeholder="Buscador" class="src" autocomplete="off">
-    <ul id="filtro">
+    <input type="text" name="Search" id="search" placeholder="Buscador" class="src" autocomplete="off" style="width: 200px;">
+    <ul id="filtro" class="sub_filtro">
     </ul>
     <div class="d-flex flex-wrap align-content-center">
       <h4>

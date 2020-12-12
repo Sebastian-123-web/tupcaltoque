@@ -12,6 +12,7 @@
     $json = array();
     while ($row = mysqli_fetch_array($result)){
       $json[] = array(
+        'id_producto' => $row['id_producto'],
         'cpu' => $row['cpu']
       );
     }
