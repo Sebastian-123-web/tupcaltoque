@@ -63,11 +63,59 @@ $(document).on('click', '.filtrodeproducto', function(){
   var elemento = $(this)[0];
   var id = $(elemento).attr('idfiltro');
   $.ajax({
-    url: 'buscador-productos.php',
-    type: 'POST',
-    data: { id },
-    success: function(){
-      location.href ="buscador-productos.php";
+    url : 'php/buscador-productos.php',
+    type : 'POST',
+    data : { id },
+    success : function(response){
+      console.log(response);
+      var data = JSON.parse(response);
+      insetar = `
+            <div class="card card-group" style="padding: 20px; margin: 10px 100px;">
+              <div class="" style="width: 300px;">
+                 <img src="img/pcgamer/${data.img}" alt="" style="width: 300px;">
+              </div>
+              <div class="card" style="margin: 10px;">
+                <div class="card-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">Procesador: ${data.cpu}</li>
+                    <li class="list-group-item">Memoria RAM: ${data.ram}GB</li>
+                    <li class="list-group-item">Disco Duro: ${data.disco_duro}</li>
+                    <li class="list-group-item">Monitor: ${data.monitor}</li>
+                    <li class="list-group-item d-flex justify-content-between"><p>Precio: S/.${data.precio}</p><button type="button" name="button" class="btn btn-warning"><b>Pagar</b> <i class="fas fa-money-bill-wave"></i></button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+           `;
+      $('#galeriaproductos').html(insetar);
+      var filtro = document.getElementById('filtro');
+      
     }
   })
+  // $.ajax({
+  //   url: 'php/buscador-productos.php',
+  //   type: 'POST',
+  //   data: { id },
+  //   success: function(response){
+  //     var data = JSON.parse(response);
+  //     insertar = `
+  //       <div class="card card-group" style="padding: 20px; margin: 10px 100px;">
+  //         <div class="" style="width: 300px;">
+  //           <img src="img/pcgamer/${data.img}" alt="" style="width: 300px;">
+  //         </div>
+  //         <div class="card" style="margin: 10px;">
+  //           <div class="card-body">
+  //             <ul class="list-group">
+  //               <li class="list-group-item">${data.cpu}</li>
+  //               <li class="list-group-item">Memoria RAM: 16GB</li>
+  //               <li class="list-group-item">Disco Duro: 1T</li>
+  //               <li class="list-group-item">Monitor: LG 24"</li>
+  //               <li class="list-group-item d-flex justify-content-between"><p>Precio: 3000GB</p><button type="button" name="button" class="btn btn-warning"><b>Pagar</b> <i class="fas fa-money-bill-wave"></i></button></li>
+  //             </ul>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     `
+  //   }
+  // })
 });
