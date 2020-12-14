@@ -6,7 +6,9 @@
 
     function agregarCarrito($id_producto, $id_user){
       include 'conexion.php';
-      $sql = "INSERT INTO `carrito` (`id_carrito`, `id_producto`, `id_user`) VALUES (NULL, '$id_producto', '$id_user')";
+      $mes = date("m");
+      $año = date("Y");
+      $sql = "INSERT INTO `carrito` (`id_carrito`, `id_producto`, `id_user`, `mes`, `año`) VALUES (NULL, '$id_producto', '$id_user', '$mes', '$año')";
       mysqli_query($link, $sql);
       echo "Se agrego correctamente";
     }
@@ -43,6 +45,9 @@
       $sql = "SELECT COUNT(*) FROM `carrito` WHERE `id_user`='$id_user'";
       $array = mysqli_fetch_array(mysqli_query($link, $sql));
       echo $array[0];
+    }
+    public function estadisticas(){
+      
     }
   }
 

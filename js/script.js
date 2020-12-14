@@ -70,11 +70,11 @@ $(document).on('click', '.filtrodeproducto', function(){
       console.log(response);
       var data = JSON.parse(response);
       insetar = `
-            <div class="card card-group" style="padding: 20px; margin: 10px 100px;">
+            <div class="card card-group" style="padding: 20px;">
               <div class="" style="width: 300px;">
-                 <img src="img/pcgamer/${data.img}" alt="" style="width: 300px;">
+                 <img src="img/computadoras/${data.img}" alt="" style="width: 300px;">
               </div>
-              <div class="card" style="margin: 10px;">
+              <div class="card">
                 <div class="card-body">
                   <ul class="list-group">
                     <li class="list-group-item">Procesador: ${data.cpu}</li>
@@ -88,8 +88,7 @@ $(document).on('click', '.filtrodeproducto', function(){
             </div>
            `;
       $('#galeriaproductos').html(insetar);
-      var filtro = document.getElementById('filtro');
-      
+      $('#filtro').html(' ');
     }
   })
   // $.ajax({
